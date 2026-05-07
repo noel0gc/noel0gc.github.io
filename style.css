@@ -157,7 +157,7 @@ code {
 	width: 15px;
 	height: 99vh;
 	background: #091413;
-
+	width: 160px;
 	display: flex;
 	flex-direction: column;
 
@@ -166,7 +166,7 @@ code {
 
 	border-style: solid;
 	border-width: 3px;
-	border-color: grey;
+	border-color: #408A71;
 
 	line-height: 2;
 
@@ -174,30 +174,6 @@ code {
 	top: 0;
 
 	isolation: isolate;
-}
-
-/* dark overlay layer for collapsed state */
-.slidebar::before {
-	content: "";
-	position: absolute;
-	inset: 0;
-
-	background: #091413;
-	opacity: 1;
-	transition: opacity 0.3s;
-
-	z-index: 1;
-	pointer-events: none;
-}
-
-/* reveal sidebar content on hover */
-.slidebar:hover::before {
-	opacity: 0;
-}
-
-.slidebar:hover {
-	width: 160px;
-	border-color: #408A71;
 }
 
 .slide_text {
