@@ -1,3 +1,263 @@
+@font-face {
+	font-family: "bpmono";
+	src: url("./bpmono.regular.ttf") format("truetype");
+	font-weight: normal;
+	font-style: normal;
+}
+
+html,
+body {
+	margin: 0;
+	height: 100%;
+	scrollbar-width: none;
+}
+
+body {
+	background-color: #091413;
+	margin: 0;
+	font-family: "bpmono";
+	scrollbar-width: none; /* Firefox */
+}
+
+/* Hide scrollbar for Chrome, Edge, Safari */
+body::-webkit-scrollbar {
+	display: none;
+}
+
+/* =========================
+	LINK STYLES
+========================= */
+
+a:link {
+	color: white;
+	text-decoration: none;
+}
+
+a:visited {
+	color: white;
+	text-decoration: none;
+}
+
+a:hover {
+	transition: 0.2s;
+	color: #408A71;
+	text-decoration: none;
+}
+
+a:active {
+	color: #408A71;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+/* =========================
+	TEXT ELEMENTS
+========================= */
+
+p {
+	font-size: 18px;
+	color: white;
+	padding-left: 22px;
+	padding-right: 22px;
+	padding-bottom: 10px;
+}
+
 h1 {
-  color: blue;
+	padding-left: 8px;
+	font-size: 39px;
+	font-weight: bold;
+	border-bottom: dotted;
+	border-bottom-width: 1px;
+	color: white;
+	border-color: #B0E4CC;
+	font-family: "bpmono";
+}
+
+h2 {
+	padding-left: 12px;
+	font-size: 29px;
+	font-weight: bold;
+	border-top: dotted;
+	border-top-width: 1px;
+	border-bottom: dotted;
+	border-bottom-width: 1px;
+	color: white;
+	border-color: #B0E4CC;
+	font-family: "bpmono";
+}
+
+ul {
+	list-style-type: none;
+}
+
+code {
+	font-family: monospace;
+	font-size: 14px;
+	color: #d6deeb;
+}
+
+/* =========================
+	INPUT / OUTPUT BLOCKS
+========================= */
+
+.pre_output {
+	border-style: solid;
+	border-width: 3px;
+	border-color: #408A71;
+	margin: 0;
+	background: linear-gradient(180deg, #000 0%, #333 100%);
+	padding: 1rem;
+	overflow-x: auto;
+}
+
+.pre_input {
+	border-top-style: solid;
+	border-right-style: solid;
+	border-left-style: solid;
+	border-width: 3px;
+	border-color: #408A71;
+	margin: 0;
+	background: black;
+	padding: 1rem;
+	overflow-x: auto;
+}
+
+/* =========================
+	LAYOUT
+========================= */
+
+.elements {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+}
+
+.content {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	overflow-y: auto;
+	scrollbar-width: none; /* Firefox */
+}
+
+.content::-webkit-scrollbar {
+	display: none; /* Chrome, Edge, Safari */
+}
+
+.divisor {
+	width: 130px;
+	height: 100vh;
+}
+
+/* =========================
+	SIDEBAR
+========================= */
+
+.slidebar {
+	width: 15px;
+	height: 99vh;
+	background: #091413;
+
+	display: flex;
+	flex-direction: column;
+
+	overflow: hidden;
+	transition: 0.5s;
+
+	border-style: solid;
+	border-width: 3px;
+	border-color: grey;
+
+	line-height: 2;
+
+	position: sticky;
+	top: 0;
+
+	isolation: isolate;
+}
+
+/* dark overlay layer for collapsed state */
+.slidebar::before {
+	content: "";
+	position: absolute;
+	inset: 0;
+
+	background: #091413;
+	opacity: 1;
+	transition: opacity 0.3s;
+
+	z-index: 1;
+	pointer-events: none;
+}
+
+/* reveal sidebar content on hover */
+.slidebar:hover::before {
+	opacity: 0;
+}
+
+.slidebar:hover {
+	width: 160px;
+	border-color: #408A71;
+}
+
+.slide_text {
+	/* intentionally empty - reserved for future styling */
+}
+
+/* =========================
+	SIDEBAR BUTTONS
+========================= */
+
+.slide_btn {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	width: 100%;
+	padding: 8px 0;
+
+	font-family: "bpmono";
+
+	border-style: solid;
+	border-width: 0.1px;
+	border-color: #408A71;
+
+	color: white;
+	text-decoration: none;
+
+	background: #111;
+
+	transition: 0.2s;
+}
+
+.slide_btn:hover {
+	background: #222;
+	transform: scale(1.2);
+}
+
+.squid {
+	image-rendering: pixelated;
+	image-rendering: crisp-edges;
+
+	border-top-style: solid;
+	border-top-width: 3px;
+	border-top-color: #408A71;
+
+	width: 160px;
+	height: 160px;
+}
+
+.slide_top {
+	display: flex;
+	flex-direction: column;
+}
+
+.slide_bottom {
+	margin-top: auto;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	padding-bottom: 5px;
 }
